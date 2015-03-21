@@ -1,0 +1,38 @@
+{
+  "name": "raf-scroll",
+  "version": "1.0.0",
+  "description": "A scroll event that fires only once per frame.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "browserify test/index.js | testling",
+    "test-browser": "beefy test/index.js:test/build.js --debug=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayamflow/raf-scroll"
+  },
+  "keywords": [
+    "raf",
+    "requestanimationframe",
+    "frame",
+    "scroll",
+    "event"
+  ],
+  "author": "= <=>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayamflow/raf-scroll/issues"
+  },
+  "homepage": "https://github.com/ayamflow/raf-scroll",
+  "dependencies": {
+    "component-raf": "^1.2.0",
+    "scrolltop": "0.0.1",
+    "tiny-emitter": "^1.0.0"
+  },
+  "devDependencies": {
+    "tape": "^3.5.0"
+  }
+}
