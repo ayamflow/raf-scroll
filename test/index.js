@@ -24,4 +24,5 @@ test('Manual call', function(assert) {
     window.scrollTo(0, 50);
     var ev = rafScroll.getCurrent();
     assert.notDeepEqual(ev.deltaY, 0, 'Calling getCurrent shouldn\'t affect/reset the deltaY value.');
+    assert.end();
 }, 50);

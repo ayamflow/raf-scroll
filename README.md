@@ -8,6 +8,8 @@ A scroll event that fires only once per frame.
 
 ## Usage
 
+Every event call is sync on a `requestAnimationFrame` (raf) loop. It is stopped by default, start when you use `add`, stopped if there is no more listeners after a `remove` call or if you call `destroy`.
+
 `rafScroll.add(callback)`
 Will call `callback` maximum once per frame, if the scroll value has changed.
 An `event` will be passed containing the current `scrollY` as well as the  `deltaY`.

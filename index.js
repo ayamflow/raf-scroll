@@ -64,10 +64,6 @@ function getEvent() {
   };
 }
 
-function checkUpdate() {
-
-}
-
 function update() {
   rafId = raf(update);
   ticking = true;

@@ -1,6 +1,6 @@
 {
   "name": "raf-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A scroll event that fires only once per frame.",
   "main": "index.js",
   "directories": {
