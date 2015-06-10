@@ -10,8 +10,11 @@ var deltaY = 0;
 var ticking = false;
 
 module.exports = {
+  init: function() {
+      if(!emitter) emitter = new Emitter();
+  },
+
   add: function(fn) {
-    if(!emitter) emitter = new Emitter();
     emitter.on('scroll', fn);
 
     // Start raf on first callback
@@ -21,7 +24,6 @@ module.exports = {
   },
 
   addOnce: function(fn) {
-    if(!emitter) emitter = new Emitter();
     emitter.once('scroll', fn);
 
     // Start raf on first callback
