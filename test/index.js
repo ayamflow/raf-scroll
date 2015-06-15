@@ -21,7 +21,6 @@ test('rAF call', function(assert) {
 
 test('Manual call', function(assert) {
     rafScroll.init();
-    rafScroll.add(function(){});
     window.scrollTo(0, 50);
 
     raf(function() {
