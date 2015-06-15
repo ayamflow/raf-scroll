@@ -66,13 +66,8 @@ function getEvent() {
 
 function update() {
   rafId = raf(update);
+
   ticking = true;
-
-  var event = getEvent();
-
-  if (event.deltaY !== 0) {
-    emitter.emit('scroll', event);
-  }
-
+  emitter.emit('scroll', getEvent());
   ticking = false;
 }
