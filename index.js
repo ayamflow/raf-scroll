@@ -43,7 +43,10 @@ module.exports = {
 
   destroy: function() {
     raf.cancel(rafId);
-    emitter.off();
+    if (emitter) {
+        emitter.off();
+        emitter = null;
+    }
     scrollY = 0;
     deltaY = 0;
   }
@@ -66,7 +69,6 @@ function update() {
   ticking = true;
 
   var event = getEvent();
-  scrollY = scrollTop();
 
   if (event.deltaY !== 0) {
     emitter.emit('scroll', event);
