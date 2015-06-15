@@ -8,7 +8,8 @@ A scroll event that fires only once per frame.
 
 ## Usage
 
-Every event call is sync on a `requestAnimationFrame` (raf) loop. It is stopped by default, start when you use `add`, stopped if there is no more listeners after a `remove` call or if you call `destroy`.
+Every event call is sync on a `requestAnimationFrame` (raf) loop.
+The triggered event contains 2 properties, `scrollY` and `deltaY`.
 
 `rafScroll.init()`
 Setup the singleton (allows to teardown/recreate at will). Needs to be called before using the lib.
@@ -24,7 +25,7 @@ Same than `add` but only trigger the event once, then automatically unbinds itse
 Unbind the listener. Passing no `callback` will unbind all previous callbacks.
 
 `rafScroll.getCurrent()`
-Manually get the `event` (containing last `scrollY`/`deltaY`).
+Manually get the `event` (containing last `scrollY`/`deltaY`). Note that you need to wait at least 1 frame to have valid values since the scroll data is read in a requestAnimationFrame.
 
 `rafScroll.destroy()`
 Clean the singleton. It will auto-restart if you call `rafScroll.init`.
