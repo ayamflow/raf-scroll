@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "browserify test/index.js | testling",
-    "test-browser": "beefy test/index.js:test/build.js --debug=false"
+    "test": "./node_modules/.bin/prova -b ./test/**/*.js -l phantom -q",
+    "test-browser": "./node_modules/.bin/prova -b ./test/**/*.js -l chrome"
   },
   "repository": {
     "type": "git",
@@ -33,9 +33,6 @@
     "tiny-emitter": "^1.0.0"
   },
   "devDependencies": {
-    "beefy": "2.1.5",
-    "browserify": "11.0.1",
-    "phantomjs": "1.9.18",
-    "tape": "^3.5.0"
+    "prova": "^2.1.2"
   }
 }
