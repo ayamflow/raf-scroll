@@ -12,6 +12,7 @@ var ticking = false;
 module.exports = {
   init: function() {
       if(!emitter) emitter = new Emitter();
+      return this;
   },
 
   add: function(fn) {
