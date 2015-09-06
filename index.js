@@ -3,18 +3,13 @@
 var raf = require('component-raf');
 var scrollTop = require('scrolltop');
 var Emitter = require('tiny-emitter');
-var emitter;
+var emitter = new Emitter();
 var rafId = -1;
 var scrollY = 0;
 var deltaY = 0;
 var ticking = false;
 
 module.exports = {
-  init: function() {
-      if(!emitter) emitter = new Emitter();
-      return this;
-  },
-
   add: function(fn) {
     emitter.on('scroll', fn);
 
@@ -49,7 +44,6 @@ module.exports = {
   destroy: function() {
     raf.cancel(rafId);
     emitter.off();
-    emitter = null;
     scrollY = 0;
     deltaY = 0;
   }

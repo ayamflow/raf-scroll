@@ -33,6 +33,9 @@
     "tiny-emitter": "^1.0.0"
   },
   "devDependencies": {
+    "beefy": "2.1.5",
+    "browserify": "11.0.1",
+    "phantomjs": "1.9.18",
     "tape": "^3.5.0"
   }
 }
