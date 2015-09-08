@@ -32,7 +32,7 @@ module.exports = {
     emitter.off('scroll', fn);
 
     // Stop raf if there is no more callbacks
-    if (emitter && emitter.e.scroll && emitter.e.scroll.length < 1) {
+    if (!emitter.e.scroll || emitter.e.scroll.length < 1) {
       raf.cancel(rafId);
     }
   },
