@@ -53,7 +53,7 @@ module.exports = {
 };
 
 function getEvent() {
-  if(ticking) {
+  if (ticking) {
     var scroll = scrollTop();
     deltaY = scroll - scrollY;
   }
