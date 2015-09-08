@@ -43,10 +43,7 @@ module.exports = {
 
   destroy: function() {
     raf.cancel(rafId);
-    if (emitter) {
-        emitter.off();
-        emitter = null;
-    }
+    emitter = new Emitter();
     scrollY = 0;
     deltaY = 0;
   }

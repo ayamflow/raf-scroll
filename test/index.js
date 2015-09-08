@@ -28,3 +28,13 @@ test('Manual call', function(assert) {
     assert.end();
   });
 });
+
+test('.destroy()', function(assert) {
+  rafScroll.add(function() {});
+  rafScroll.destroy();
+  rafScroll.add(function(e) {
+    rafScroll.destroy();
+    assert.equal(e !== undefined, true, 'the callback should have been called');
+    assert.end();
+  });
+});
