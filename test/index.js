@@ -8,7 +8,6 @@ var raf = require('component-raf');
 document.body.style.height = window.innerHeight + 500 + 'px';
 
 test('rAF call', function(assert) {
-    rafScroll.init();
     rafScroll.addOnce(function(event) {
         assert.notDeepEqual(event.deltaY, 0, 'Event shouldn\'t be called if scroll hasn\'t changed.');
         assert.deepEqual(event.deltaY, 50, 'deltaY should reflect the latest change.');
@@ -20,7 +19,6 @@ test('rAF call', function(assert) {
 });
 
 test('Manual call', function(assert) {
-    rafScroll.init();
     window.scrollTo(0, 50);
 
     raf(function() {
