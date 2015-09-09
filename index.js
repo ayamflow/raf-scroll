@@ -32,7 +32,7 @@ module.exports = {
     emitter.off('scroll', fn);
 
     // Stop raf if there is no more callbacks
-    if (emitter && emitter.e.scroll && emitter.e.scroll.length < 1) {
+    if (!emitter.e.scroll || emitter.e.scroll.length < 1) {
       raf.cancel(rafId);
     }
   },
@@ -43,17 +43,14 @@ module.exports = {
 
   destroy: function() {
     raf.cancel(rafId);
-    if (emitter) {
-        emitter.off();
-        emitter = null;
-    }
+    emitter = new Emitter();
     scrollY = 0;
     deltaY = 0;
   }
 };
 
 function getEvent() {
-  if(ticking) {
+  if (ticking) {
     var scroll = scrollTop();
     deltaY = scroll - scrollY;
   }
