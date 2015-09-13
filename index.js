@@ -50,10 +50,13 @@ module.exports = {
 };
 
 function getEvent() {
+  var scroll = scrollTop();
+
   if (ticking) {
-    var scroll = scrollTop();
     deltaY = scroll - scrollY;
   }
+
+  scrollY = scroll;
 
   return {
     scrollY: scrollY,
