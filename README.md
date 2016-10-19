@@ -37,7 +37,7 @@ Clean the singleton. It will auto-restart if you call `rafScroll.init`.
 var rafScroll = require('raf-scroll');
 
 rafScroll.add(function onScroll(event) {
-  if (window.innerHeight + event.scrollY >= document..offsetHeight - window.innerHeight * 0.5) {
+  if (window.innerHeight + event.scrollY >= document.offsetHeight - window.innerHeight * 0.5) {
     triggerInfiniteScroll();
   }
 }
